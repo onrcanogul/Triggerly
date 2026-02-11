@@ -1,0 +1,83 @@
+version: "3.9"
+
+services:
+  auth-service:
+    image: ghcr.io/your-org/auth-service:latest # optional dockerhub
+    container_name: auth-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: 8080
+
+      # Managed Postgres
+      SPRING_DATASOURCE_URL: ${AUTH_DB_URL}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS}
+
+      # Kafka (infra VM)
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+
+      TZ: Europe/Istanbul
+    ports:
+      - "8081:8080"
+
+  device-service:
+    image: ghcr.io/your-org/device-service:latest # optional dockerhub
+    container_name: device-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: 8080
+
+      SPRING_DATASOURCE_URL: ${DEVICE_DB_URL}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS}
+
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+
+      TZ: Europe/Istanbul
+    ports:
+      - "8082:8080"
+
+  market-service:
+    image: ghcr.io/your-org/market-service:latest # optional dockerhub
+    container_name: market-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: 8080
+
+      SPRING_DATASOURCE_URL: ${MARKET_DB_URL}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS}
+
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+
+      # Redis (if need it)
+      REDIS_HOST: ${REDIS_HOST}
+      REDIS_PORT: ${REDIS_PORT}
+
+      # Market data provider config
+      MARKET_PROVIDER: ${MARKET_PROVIDER:-BINANCE}
+
+      TZ: Europe/Istanbul
+    ports:
+      - "8083:8080"
+
+  alert-service:
+    image: ghcr.io/your-org/alert-service:latest # optional dockerhub
+    container_name: alert-service
+    restart: unless-stopped
+    environment:
+      SPRING_PROFILES_ACTIVE: prod
+      SERVER_PORT: 8080
+
+      SPRING_DATASOURCE_URL: ${ALERT_DB_URL}
+      SPRING_DATASOURCE_USERNAME: ${DB_USER}
+      SPRING_DATASOURCE_PASSWORD: ${DB_PASS}
+
+      KAFKA_BOOTSTRAP_SERVERS: ${KAFKA_BOOTSTRAP_SERVERS}
+
+      TZ: Europe/Istanbul
+    ports:
+      - "8084:8080"
