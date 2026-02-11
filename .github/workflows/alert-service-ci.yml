@@ -1,0 +1,31 @@
+name: Alert Service CI
+
+on:
+  push:
+    paths:
+      - 'services/alert-service/**'
+  pull_request:
+    paths:
+      - 'services/alert-service/**'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: services/alert-service
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up JDK 17
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: maven
+
+      - name: Build with Maven
+        run: mvn clean install -DskipTests
