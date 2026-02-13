@@ -13,6 +13,8 @@
     <name>Triggerly</name>
 
     <modules>
+        <module>libs/common</module>
+        <module>libs/contracts</module>
         <module>services/auth-service</module>
         <module>services/device-service</module>
         <module>services/market-service</module>
