@@ -3,10 +3,12 @@ package com.triggerly.market.domain.service;
 import com.triggerly.market.domain.model.MarketSnapshot;
 import com.triggerly.market.domain.model.valueobjects.PriceTick;
 import com.triggerly.market.domain.model.valueobjects.Symbol;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.time.Instant;
 
+@Component
 public class MarketNormalizer {
 
     public MarketSnapshot normalize(

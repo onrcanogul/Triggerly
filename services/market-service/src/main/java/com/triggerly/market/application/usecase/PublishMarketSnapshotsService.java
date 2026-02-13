@@ -9,10 +9,12 @@ import com.triggerly.market.application.port.out.MarketEventPublisherPort;
 import com.triggerly.market.domain.event.MarketSnapshotCreatedEvent;
 import com.triggerly.market.domain.model.MarketSnapshot;
 import com.triggerly.market.domain.service.MarketNormalizer;
+import org.springframework.stereotype.Service;
 
 import java.util.*;
 
 
+@Service
 public class PublishMarketSnapshotsService implements PublishMarketSnapshotsUseCase {
 
     private final MarketDataProviderPort provider;
@@ -20,7 +22,12 @@ public class PublishMarketSnapshotsService implements PublishMarketSnapshotsUseC
     private final MarketEventPublisherPort publisher;
     private final DomainEventBusPort domainEventBusPublisher;
 
-    public PublishMarketSnapshotsService(MarketDataProviderPort provider, MarketNormalizer normalizer, MarketEventPublisherPort publisher, DomainEventBusPort domainEventBusPublisher) {
+    public PublishMarketSnapshotsService(
+            MarketDataProviderPort provider,
+            MarketNormalizer normalizer,
+            MarketEventPublisherPort publisher,
+            DomainEventBusPort domainEventBusPublisher
+    ) {
         this.provider = provider;
         this.normalizer = normalizer;
         this.publisher = publisher;

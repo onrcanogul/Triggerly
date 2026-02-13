@@ -1,3 +1,9 @@
 spring:
   application:
     name: market
+
+
+app:
+  kafka:
+    bootstrapServers: localhost:9092
+
