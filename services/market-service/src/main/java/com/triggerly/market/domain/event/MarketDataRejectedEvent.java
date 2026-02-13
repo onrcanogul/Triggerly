@@ -10,7 +10,8 @@ public class MarketDataRejectedEvent extends BaseDomainEvent {
 
     public MarketDataRejectedEvent(String rawSymbol,
                                    String reason,
-                                   String source) {
+                                   String source
+    ) {
         this.rawSymbol = rawSymbol;
         this.reason = reason;
         this.source = source;
