@@ -65,6 +65,22 @@ public class ServiceResponse<T> {
 
     /* ---------------- FAILURE ---------------- */
 
+    public static <T> ServiceResponse<T> error(List<String> errors, int statusCode) {
+        ServiceResponse<T> response = new ServiceResponse<>();
+        response.setErrors(errors);
+        response.setStatusCode(statusCode);
+        response.setSuccessful(false);
+        return response;
+    }
+
+    public static <T> ServiceResponse<T> error(String error, int statusCode) {
+        ServiceResponse<T> response = new ServiceResponse<>();
+        response.setErrors(Collections.singletonList(error));
+        response.setStatusCode(statusCode);
+        response.setSuccessful(false);
+        return response;
+    }
+
     public static <T> ServiceResponse<T> failure(List<String> errors, int statusCode) {
         ServiceResponse<T> response = new ServiceResponse<>();
         response.setErrors(errors);

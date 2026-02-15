@@ -1,0 +1,7 @@
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/Envelope.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/EventTypes.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/Topics.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/auth/v1/UserDeletedV1.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/auth/v1/UserLoggedInV1.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/auth/v1/UserRegisteredV1.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/contracts/src/main/java/triggerly/contracts/market/v1/MarketSnapshotCreatedV1.java

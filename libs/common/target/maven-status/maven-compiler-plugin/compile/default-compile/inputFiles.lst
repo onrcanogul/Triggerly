@@ -1,0 +1,5 @@
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/common/src/main/java/triggerly/common/ddd/AggregateRoot.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/common/src/main/java/triggerly/common/entity/BaseEntity.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/common/src/main/java/triggerly/common/event/domain/BaseDomainEvent.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/common/src/main/java/triggerly/common/event/integration/IntegrationEvent.java
+/Users/onurcanogul/Desktop/personal-projects/Triggerly/libs/common/src/main/java/triggerly/common/response/ServiceResponse.java

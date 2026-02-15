@@ -1,0 +1,7 @@
+triggerly/contracts/Envelope.class
+triggerly/contracts/auth/v1/UserDeletedV1.class
+triggerly/contracts/auth/v1/UserLoggedInV1.class
+triggerly/contracts/EventTypes.class
+triggerly/contracts/auth/v1/UserRegisteredV1.class
+triggerly/contracts/Topics.class
+triggerly/contracts/market/v1/MarketSnapshotCreatedV1.class

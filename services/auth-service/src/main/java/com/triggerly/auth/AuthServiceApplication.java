@@ -1,9 +1,12 @@
 package com.triggerly.auth;
 
+import com.triggerly.auth.config.AuthKafkaProps;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 
 @SpringBootApplication
+@EnableConfigurationProperties(AuthKafkaProps.class)
 public class AuthServiceApplication {
 
 	public static void main(String[] args) {

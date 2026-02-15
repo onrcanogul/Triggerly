@@ -1,0 +1,5 @@
+triggerly/common/ddd/AggregateRoot.class
+triggerly/common/entity/BaseEntity.class
+triggerly/common/event/domain/BaseDomainEvent.class
+triggerly/common/response/ServiceResponse.class
+triggerly/common/event/integration/IntegrationEvent.class
